@@ -7,7 +7,7 @@ before_install:
   - docker build -t phalu/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true phalu/docker-react npm run test
+  - docker run phalu/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
